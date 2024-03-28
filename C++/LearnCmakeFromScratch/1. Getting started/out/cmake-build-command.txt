@@ -1,0 +1,4 @@
+current dir: "1. Getting started\out\build_mingw_make"
+
+cmake -S ..\..\ -B . -G "MinGW Makefiles"
+cmake --build .
