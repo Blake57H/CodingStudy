@@ -1,0 +1,1 @@
+git submodule add https://github.com/glfw/glfw.git "C++\LearnCmakeFromScratch\3. Submodules\external\glfw"

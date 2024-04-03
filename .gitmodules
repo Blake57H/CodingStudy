@@ -1,0 +1,3 @@
+[submodule "C++/LearnCmakeFromScratch/3. Submodules/external/glfw"]
+	path = C++/LearnCmakeFromScratch/3. Submodules/external/glfw
+	url = https://github.com/glfw/glfw.git
