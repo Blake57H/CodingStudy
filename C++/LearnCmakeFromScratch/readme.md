@@ -14,3 +14,17 @@ Current dir: "1. Getting started\out\build_mingw_make"
 cmake -S ..\..\ -B . -G "MinGW Makefiles"   <-- cmake to make
 cmake --build .                             <-- make to executable
 ```
+
+### Git add submodule
+
+template:
+
+```bash
+git submodule add https://link/to/submodule.git "folder/to/the/submodule"
+```
+
+the tutorial:
+
+```bash
+git submodule add https://github.com/glfw/glfw.git "C++\LearnCmakeFromScratch\3. Submodules\external\glfw"
+```

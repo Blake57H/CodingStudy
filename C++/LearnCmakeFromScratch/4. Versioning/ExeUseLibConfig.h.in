@@ -1,0 +1,2 @@
+#define ExeUseLib_VERSION_MAJOR @ExeUseLib_VERSION_MAJOR@
+#define ExeUseLib_VERSION_MINOR @ExeUseLib_VERSION_MINOR@
