@@ -37,6 +37,15 @@ O(1)? time complexity and O(1)? space complexity.
 
 ## Side notes
 
+### building a static library
+
+```bash
+g++ -c -Wall main.cpp  // "-c": stops before running linker; "-Wall": prints a lot of debug message; This generates "main.o" library file.
+g++ -o main main.o -static  // compiling "main.o" into "main" executable (or name it "main.exe").
+```
+
+### Passing pointer vs passing object
+
 I have a class:
 
 ```cpp
