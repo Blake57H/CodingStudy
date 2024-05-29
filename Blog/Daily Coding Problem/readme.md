@@ -1,6 +1,6 @@
 # Daily Coding Problems
 
-here is an existing answer: 
+here is an existing answer:
 
 - [https://github.com/ruppysuppy/Daily-Coding-Problem-Solutions](https://github.com/ruppysuppy/Daily-Coding-Problem-Solutions)
 - [https://github.com/cwetanow/DailyCodingProblem/tree/master/DailyCodingProblem.Solutions](https://github.com/cwetanow/DailyCodingProblem/tree/master/DailyCodingProblem.Solutions)
