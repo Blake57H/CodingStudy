@@ -7,12 +7,11 @@ class Node
 {
 public:
     std::string m_currChar;
-    int m_nodeType; // 0 = regular node, 1 = root node, 2 = leaf node.
+    bool m_thisIsAWord = false;
     std::map<std::string, std::shared_ptr<Node>> m_childNodes;
 
     static void addChildString(std::shared_ptr<Node> node, std::string newString)
     {
-        if (newString.size() == 0) return;
         std::string currChar = newString.substr(0, 1);
         auto childNodeFinder = node->m_childNodes.find(currChar);
         std::shared_ptr<Node> childNode;
@@ -24,8 +23,12 @@ public:
         }
         else
             childNode = childNodeFinder->second;
+
         if (newString.size() == 1)
+        {
+            childNode->m_thisIsAWord = true;    // "Word" marker regardless children count.
             return;
+        }
         Node::addChildString(childNode, newString.substr(1, newString.size() - 1));
     }
 
@@ -42,9 +45,15 @@ public:
             // e.g. query "dog" in [dog, deer, deal]
             if (node->m_childNodes.size() == 0)
             {
-                std::cout << "'" << node->m_currChar << "'" << std::endl;
+                // std::cout << "'" << node->m_currChar << "'" << std::endl;
                 result.push_back("");
                 goto return_result;
+            }
+
+            // if this is a word, treat it like it has no children so that it would back track to a word.
+            // but still need to look into its childrens.
+            if (node->m_thisIsAWord){
+                result.push_back("");
             }
 
             // has childe, append child's char along with its childrens' char
@@ -88,9 +97,11 @@ int main(int argc, char *argv[])
     // auto result = solve();
     // std::cout << "Result: " << result << "\n";
     std::shared_ptr<Node> root = std::make_shared<Node>();
+    Node::addChildString(root, "done");
     Node::addChildString(root, "dog");
     Node::addChildString(root, "deer");
     Node::addChildString(root, "deal");
-    solve(root, "d");
+    Node::addChildString(root, "do"); // I will need a marker to indicate that "this is a word" despite it has childrens
+    solve(root, "do");
     return 0;
 }
