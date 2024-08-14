@@ -35,8 +35,8 @@ int solveAlt(std::shared_ptr<Node> &listA, std::shared_ptr<Node> &listB)
     int aLength = 0, bLength = 0;
 
     // calculate the length of a and b
-    for (std::shared_ptr<Node> i = listA; i != nullptr; aLength++, i = i->next);
-    for (std::shared_ptr<Node> i = listB; i != nullptr; bLength++, i = i->next);
+    for (std::shared_ptr<Node> i = listA; i != nullptr; aLength++, i = i->next); // O(M)
+    for (std::shared_ptr<Node> i = listB; i != nullptr; bLength++, i = i->next); // O(N)
 
     int diff = aLength - bLength;
     std::shared_ptr<Node> &shorterListPtr = diff < 0 ? listA : listB;
@@ -46,7 +46,7 @@ int solveAlt(std::shared_ptr<Node> &listA, std::shared_ptr<Node> &listB)
     for(int i = 0; i < abs(diff); i++)
         longerListPtr = longerListPtr->next;
     
-    for(int i = 0; i < shorterListLength; i++)
+    for(int i = 0; i < shorterListLength; i++)  // O(max(M, N))
     {
         if(shorterListPtr == longerListPtr)
         {
