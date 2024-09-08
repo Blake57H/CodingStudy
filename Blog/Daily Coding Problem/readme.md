@@ -9,4 +9,4 @@ here is an existing answer:
 
 Notes for my own convenient.
 
-Windows: `g++ main.cpp -o main.exe -Wall -std=c++20 & main.exe` (`gcc` never worked for me because it is for C not C++)
+Windows: `cls & g++ main.cpp -o main.exe -Wall -std=c++20 & main.exe` (`gcc` never worked for me because it is for C not C++)
