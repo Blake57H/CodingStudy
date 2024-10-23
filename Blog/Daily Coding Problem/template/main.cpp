@@ -5,7 +5,6 @@ int solve(){
 }
 
 int main(int argc, char* argv[]){
-    auto result = solve();
-    std::cout << "Result: " << result << "\n";
+    std::cout << "Result: " << solve() << "\n";
     return 0;
 }

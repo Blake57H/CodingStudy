@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
         {3, 0, 1, 4, 3, 4},
         {3, 0, 1, 4, 3, 2},
         {0, 0, 0, 0, 0, 0, 0},
+        {3, 4, 5, 4, 5, 4},
+        {3, 4, 5, 6, 5, 4},
         {3, 0, 1, 4, 5, 4}};
     for (auto map : maps)
         std::cout << std::format("Result of {}: {}\n", print_map(map), solve(map));
